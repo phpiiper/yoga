@@ -651,7 +651,7 @@ var lis = [
    ]],["Recommendations","recs"],["About","about"],["Contact","contact"],["References","ref"]
 ]
     var hbIco = document.createElement("img"); hbIco.className = "menuOpDiv menuODIco"; p.appendChild(hbIco); hbIco.src = "assets/images/menu.svg";
-    var hb = document.createElement("div"); hb.className = "menuOpDivBody"; p.appendChild(hb)
+    var hb = document.createElement("div"); hb.className = "menuOpDivBody"; p.appendChild(hb); hbIco.alt = "Mobile Menu Button Dropdown";
 
 for (var i=0; i<lis.length; i++){
     var h = document.createElement("div"); h.classList.add("menuOpDiv"); hb.appendChild(h);
