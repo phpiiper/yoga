@@ -697,7 +697,7 @@ var div = document.createElement("div"); div.id = "footerDiv"; parent.appendChil
                     a.style.cursor = "pointer"; a.onclick = function(){popUp(div,ob[1]);}
                 }
             }
-    var p = document.createElement("p"); p.className = "text-muted"; p.style = "text-align: center; padding-top: 2vh;"; p.innerHTML = "&copy WebsiteName"; div.appendChild(p);
+    var p = document.createElement("p"); p.className = "text-muted"; p.style = "text-align: center; padding-top: 2vh;"; p.innerHTML = "&copy 2022 Piper Phair (YOGA)"; div.appendChild(p);
 
 }
 function popUp(parent,text,header,style){ // Usage: Create a popup by removing website scrolling & puts in text inside popUp div
