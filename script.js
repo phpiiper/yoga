@@ -1,3 +1,4 @@
+// Very long list of array data (Lines 2-533)
 var genre_list = [
 {genre: "Action",
 info: "Action anime are filled with lots of fighting scenes. Seen quite often in fantastical settings. The most well-known are male-orientated.", img: "action.png", show: "Attack on Titan",
@@ -642,7 +643,7 @@ var txt = document.createElement("div"); txt.className = "tipText"; txt.innerHTM
 
 function createBar(p){
     var ti = document.createElement("a"); ti.className = "menuOp"; ti.href = "index.html";
-    var img = document.createElement("img"); img.src = "assets/images/logolast2a.png"; ti.appendChild(img); img.id = "logoIm";
+    var img = document.createElement("img"); img.src = "assets/images/logolast2a.png"; ti.appendChild(img); img.id = "logoIm"; img.alt = "Website Logo";
     p.appendChild(ti);
 
 var lis = [
