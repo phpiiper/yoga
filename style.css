@@ -1,0 +1,518 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Noto+Sans&display=swap');
+
+html {width: 100%; height: 100%;}
+
+body {
+margin: 0; padding: 0;
+font-family: "Noto Sans";
+width: 100%; height: 100%;
+    background-color: black;
+}
+div {position: relative; box-sizing: border-box; font-size: 22px; font-family: "Noto Sans"; transition: 0.2s;}
+
+:root {
+    --c1: 180, 145, 174;
+    --c2: 102, 143, 128;
+    --c3: 74, 102, 112;
+    --c4: 214, 162, 173;
+    --c5: 117, 87, 125;
+--c1A: 191,127,122; --c1B: 204,155,171; --c1C: 195,155,204; --c1D: 173,147,194;
+--c2A: 103,146,156; --c2B: 109,166,161; --c2C: 109,166,129; --c2D: 103,156,106;
+--c3A: 76,86,125; --c3B: 82,107,135; --c3C: 82,135,135; --c3D: 76,125,111;
+--c4A: 227,176,161; --c4B: 237,174,168; --c4C: 237,168,218; --c4D: 219,161,227;
+--c5A: 138,90,109; --c5B: 148,96,143; --c5C: 123,96,148; --c5D: 101,90,138;
+
+}
+
+.customScroll::-webkit-scrollbar {   width: 10px;    }
+.customScroll::webkit-scrollbar-buttom {background: red;}
+.customScroll::-webkit-scrollbar-track { background: #f1f1f1; }
+.customScroll::-webkit-scrollbar-thumb {background: #888; }
+.customScroll::-webkit-scrollbar-thumb:hover {background: #555;}
+
+
+
+#logoIm { height: 60px; margin: 0px 15px; }
+.coverDiv {
+    position: fixed; height: 100%; width: 100%;
+    overflow-y: auto;
+    background-color: rgba(0,0,0,0.3);
+    display: flex; justify-content: center; align-items: center;
+    bottom: 0%; left: 0;
+}
+    .popUpDiv {width: 85vw; height: auto; max-height: 85vh; padding: 50px 15px; background-color: rgba(var(--c3)); overflow-y: auto;}
+        .popUpDivH {text-decoration: underline; font-size: 1.1em; margin-bottom: 20px;}
+
+/* top menu */
+#headerMenu {
+    display: flex; align-items: center; z-index: 3; width: 100%;
+    min-height: 100px; flex-wrap: wrap;
+    top: 0; padding: 10px 2vw; background-color: rgba(var(--c5)); color: black;
+}
+
+
+/* footer */
+#footerDiv {
+    background-color: black; width: 100%; height: 150px; padding: 10px 2vw; color: white;
+}
+    #footerNoteDiv {}
+    #footerLinkDiv {width: 70%; display: flex; flex-direction: column; justify-content: right;
+    align-items: end;
+    }
+        .footerLink {color: white; text-decoration: none; margin-left: 30px; font-size: 0.8em; text-align: right;
+        }
+        .footerLink:hover {text-decoration: underline;}
+#footerDiv ul li a:hover {color: red;}
+
+/* SECTION 1 "Splashpage" */
+#header {
+   box-sizing: border-box; position: relative; display: flex;
+height: 100vh; justify-content: center; align-items: center;
+background-color: rgba(var(--c5A));
+   text-align: center;
+   background: url("assets/images/pattern.png");
+    background-position-y: 4vh;
+
+}
+#headerInside {
+width: 95vw; height: 70vh; /*  border-radius: 0 0.5vw 0.5vw 0; background-color: rgba(var(--c3),0.4); */ display: flex; flex-direction: column;
+ padding: 5vw; text-align: left; padding-left: 10vw; justify-content: center;
+ }
+   #headerText {
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+   font-size: 8vh; margin-top: 10vh; width: 60vh; height: 60vh;
+   border: 5px solid white; padding: 5vw 5vh;
+   }
+         #headerText .headerSpan  { line-height: 9vh; }
+         #headerText:nth-last-child(2) {line-height: 12vh;}
+         #headerStart {
+            border: 2px solid #d9d9d9; display: flex; justify-content: center; align-items: center; box-sizing: border-box; margin-top: 3vh; padding: 10px 30px; width: fit-content;
+         }
+        #headerStart:hover {background-color: white; cursor: pointer; border-radius: 1.5em; border-color: white;}
+    .headerHeader {margin-bottom: 15%; text-align: left;}
+    .headerBtn { border: none;
+    background-color: transparent; color: black; text-decoration: underline; margin-right: 0.5em;
+    }
+    .headerBtn:hover {color: rgba(var(--c1));}
+#headerAMenu {
+    border-radius: 0.5vw 0 0 0.5vw; background-color: rgba(var(--c1A),0.6);
+    margin-left: 2vw; height: 70vh; width: 40vw; padding: 2vw;
+    overflow-y:auto;
+    }
+
+    #hrefUl li {margin-bottom: 20px;}
+        .hrefLi {text-decoration: none; color: black; transition: 0.2s;}
+        .hrefLi:hover {color: red; text-decoration: underline;}
+#indexTOC {
+    overflow-y: auto; height: 75vh;
+}
+
+
+#menuDiv {width: 100%; z-index:1; align-items: center;
+display: flex; background-color: rgba(var(--c3));
+height: 100px; position: relative;
+}
+#menuDiv a {text-decoration: none; color: inherit;}
+#menuDiv a:hover {color: purple;}
+    .menuOpDiv { text-decoration: none; color: black;
+    display: flex; justify-content: center; align-items: center;
+    padding: 5px; margin: 0 5px;
+    width: available;
+    }
+
+    .menuOpDivBody {display: flex;}
+        .menuODIco {display: none;}
+    .hDropdown:after {
+        content: url("assets/images/dropdown.svg");
+        height: 100%; display: flex; align-items: center;  margin-left: -5px;
+        padding-top: 5px;
+    }
+    .hDropdownList { transition: 0.3s;
+    position: absolute; z-index:2;
+    top: 100%; left: 0;
+    max-height: 0; overflow: hidden;
+        background-color: rgba(var(--c3));
+        }
+        .hDropdownList div {
+        color: inherit; padding: 5px 15px;
+        text-align: left; width: 100%; border-bottom: 2px solid black;
+        }
+            .hDropdownLongest {width: max-content !important;}
+            .hDropdownList div:last-child {border-bottom: none;}
+        .hDropdownList div a {
+            text-decoration: none; color: inherit;
+            }
+    .hDropdown:hover .hDropdownList {max-height: 1000px;}
+    .hDropdown:active .hDropdownList {
+        max-height: 1000px;
+    }
+
+
+
+/* SECTION 2 "main content" */
+#introPage {background-color: rgba(var(--c3C),0.9);
+    font-size: 0.9em; margin-bottom: 2vh; display: flex;}
+    #introPageSide {width: 40%; padding-left: 5vw;}
+    #introPageBody {width: 60%;}
+        .introPageCard {margin-bottom: 2vh;
+        background-color: rgba(233,233,233,0.9);
+        }
+        .introPageCard a {color: black;}
+        .introPageCard a:hover {color: grey; text-decoration: underline;}
+#learnIntroPage { background-color: rgba(var(--c3C));
+}
+
+#contentDiv {display: flex; position: relative; padding-bottom: 4vh;}
+    .page {padding: 2% 5vw 5vh 10vw; background-color: white; width: 100%; box-sizing: border-box;}
+
+    #genres {background-color: rgba(var(--c1A));}
+    #tropes {background-color: rgba(var(--c4A));}
+    #terms {background-color: rgba(var(--c3D));}
+    #tips {background-color: rgba(var(--c3A));}
+
+    #genreList {
+    display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    }
+        .genreDiv { background-color: white; margin: 1vw; border-radius: 20px; font-size: 0.9em; padding-bottom: 20px;
+        display: flex; flex-direction: column;
+
+        flex: 1 0 385px;
+        }
+        .genreTitle {letter-spacing: 0.1em; text-align: center; margin: 10px 0;}
+            .genreIm { width: 100%; height: 21vh;  background-position: top; background-size: cover; background-repeat: no-repeat; border-radius: 20px 20px 0 0;}
+                .genreIm:after {
+                content: attr(data-title); transition: 0.2s;
+                position: absolute; bottom: 0; right: 0; margin-bottom: 5px; font-size: 0.8em; font-family: "Chakra Petch"; font-weight: bold; padding: 2px 10px;
+                     background-color: rgba(250,250,250,0.8);
+                }
+
+        .genreDesc {background-color: none; padding: 5px; margin: 2px 15px; margin-bottom: 20px; font-size: 0.9em; overflow: auto; text-align: left;
+            height: fit-content; border-bottom: 1px solid black;
+            flex: 1 0 auto;
+        }
+            .genreNoteDiv {overflow: auto; max-height: 45vh;}
+                .genreNote { margin: 10px 8px; padding: 5px 5px 5px 10px; font-size: 0.7em; border-left: 4px solid rgba(var(--c1A),0.8);
+                text-align: left;
+                }
+
+
+
+        #tropeList {display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+            }
+        .tropeDiv {background-color: white; margin: 1vw; text-align: center;  display: flex; flex-direction: column;
+        border-radius: 20px; padding-bottom: 2vh;
+
+        height: 80vh;
+        }
+        .tropeIm {width: 100%; height: 30vh; background-position: top; background-repeat: no-repeat; background-size: cover;
+        border-radius: 20px 20px 0 0; padding: 10px;
+
+        text-shadow: 0 0 3px white; font-size: 2em;  text-align: center;
+        justify-content: center; align-items: center; display: flex; font-weight: bold;
+        }
+            .tropeIm:after { content: attr(data-title);
+            position: absolute; bottom: 0; right: 0; margin-bottom: 5px;
+            background-color: rgba(250,250,250,0.8); padding: 2px 10px; font-size: 0.4em; font-family: "Chakra Petch"; text-shadow: none; color: black;
+            max-width: 95%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+            }
+
+        .tropeDesc {font-size: 0.9em; text-align: left; height: 45vh;
+        margin: 2px 15px; margin-bottom: 10px;
+        padding: 1vh 0.5vw;
+            font-size: 0.8em;
+            overflow: auto; border-bottom: 1px solid black;
+            display: flex; flex-direction: column;
+        }
+/* contactPage */
+#contactForm {
+    width: 40vw; display: flex; flex-direction: column;
+}
+
+#contactPage div {width: 100%;}
+    #contactPage:first-child {background-color:red; width: 35%;}
+    #contactPage:last-child {width: 60%;}
+#contactForm div:first-child input:first-child {width: 35%;}
+#contactForm div:first-child input:last-child {width: 55%;}
+
+.inputForm {padding: 15px; font-size: 16px; margin: 0.1%; margin-bottom: 5px; border: none; border: 1px solid black;}
+    input .inputForm {border-radius: 30px}
+    input .inputForm:invalid {color: red;}
+    textarea {width: 100%; min-height: 100px;}
+    #inputFormBtn {
+        float: right;  margin: 5px; margin-right: 10%; padding: 10px 25px; font-size: 18px; border-radius: 5px; border: none;
+        background-color: white; border: 2px solid black;
+    }
+        #inputFormBtn:hover {cursor: pointer; }
+    *:required::placeholder { color: red; }
+
+
+#pageCarousel {
+    display: flex; justify-content: center; margin-bottom: 20px;
+}
+/* carousel  */
+.carouselDiv {
+    background-color: white; width: 75%; height: 60vh;
+    margin: 20px 0;
+}
+.carouselAIm {height: 60vh;}
+
+    .carouselArr {position: absolute; font-size: 5vw; height: 100%; display: flex; justify-content: center; align-items: center; background-color: rgba(200,200,200,0.1); padding: 0 1vw; z-index: 2; user-select: none;}
+    .carouselArr:hover {cursor: pointer; background-color: rgba(200,200,200,0.2);}
+    .carouselA:after {
+        content: attr(data-id); position: absolute; display: flex; justify-content: center; align-items: center; text-decoration: none; text-shadow: 1px 1px black; text-align: center;
+
+        right: 15%; bottom: 50px; z-index: 3; padding: 4px 20px;
+        border: 2px solid white; color: white;
+    }
+    .carouselIm {
+        width: 100%; height: 100%;
+        background-position: center; background-size: cover; background-repeat: no-repeat;
+        transition: 0.2s; object-fit: cover; object-position: center;
+    }
+        .carouselIm:hover {  opacity: 0.8; }
+    .dotDiv {
+        width: 100%; position: absolute; bottom: 0; height: 30px; display: flex; justify-content: center; align-items: center;
+    }
+        .carouselDot {
+            height: 12.5px; width: 12.5px; border-radius: 6.25px; background-color: white; margin: 0 5px;
+        }
+            .carouselDot:hover {cursor: pointer; }
+        .selectedDot {background-color: #c761e1;}
+/* carousel */
+
+
+#termDiv {display: flex; width: 100%;
+flex-direction: column;
+}
+#termBody { display: flex; flex-wrap: wrap}
+
+.term { display: flex; flex-direction: column; flex: 1 0 385px; padding-bottom: 20px;
+margin: 1vw; border-radius: 20px;
+max-height: 65vh;
+}
+    .termTitle {height: 15vh;  display: flex; justify-content: center; align-items: center; font-size: 1.6em; text-align: center; border-radius: 20px 20px 0 0;
+        background-color: rgba(var(--c3D),0.7);
+    }
+    .termBtnList {background-color: rgba(var(--c3D),0.7); padding: 5px; display: flex; flex-wrap: wrap;}
+        .termBtn {margin: 5px; background-color: white; border-radius: 10px; padding: 2px 10px; font-size: 0.7em; transition: 0.2s; border: 1px solid white; display: flex; align-items: center; width: max-content;
+        }
+            .termBtn:after { content: url("assets/images/open.svg");
+            display: flex; justify-content: center; width: 24px; height: 24px; transform: scale(0.75);
+            }
+            .termBtn:hover {cursor: pointer;
+                border: 1px solid black; background-color: rgba(var(--c2C));
+            }
+    .termTextDiv {overflow: auto; padding-bottom: 20px;
+        border-bottom: 1px solid black; margin: 5px 20px;
+    }
+        .termText { padding-bottom: 10px; margin: 20px; font-size: 0.8em;}
+
+
+.tipDiv {
+background-color: white; margin-bottom: 2em; border-radius: 20px; padding: 20px 5px;
+}
+    .tipDiv h2 {font-weight: bold; padding: 10px;}
+    .tipDiv div {
+       padding: 10px; font-size: 0.9em; border-radius: 10px; padding-top: 0; max-height: 60vh; overflow: auto;
+    }
+
+#lContentFooter { background-color: rgba(var(--c1D),0.9); display: flex; }
+    #lContentFooter div:first-child > div {display: flex; width: 100%;
+    align-items: center;
+    color: black;
+    }
+    #lContentFooter div:first-child span { padding: 0.375rem 0.75rem; margin-right: 0.5em;
+    font-weight: bold; letter-spacing: 0.1em;
+    }
+    #lContentFooter div:first-child button { font-size: 1em; color: black;
+    background-color: white; border-radius: 0.1em;
+    margin-left: 0.5em;
+    }
+        #lContentFooter div:first-child ul {
+        background-color: white;
+        }
+        #lContentFooter div:first-child ul a {color: black; }
+        #lContentFooter div:first-child ul a:hover {background-color: grey;}
+    #lContentFooter > div:first-child {width: 50%;}
+    #lContentFooter > div:last-child {width: 50%; padding-left: 5%;}
+    #lContentFooter > div p {
+    min-height: 100px;
+    }
+
+
+
+/* bottom all */
+#learnButton { padding: 5px 10px; background-color: white; font-size: 1em; transition: 0.2s; border-radius: 0.2em;  text-decoration: none; color: black;}
+    #learnButton:hover {cursor: pointer; background-color: black; color: white; border-color: black; text-decoration: underline;}
+
+
+/* recs */
+#recommendationsPage { background-color: rgba(var(--c1D));}
+#recDiv { background-color: rgba(var(--c5C)); border-radius: 0 0 10px 10px; }
+    #recTitleDiv {display: flex; padding: 5px 0 0 10px;}
+        #animeTitle {font-size: 1.1em; margin-right: 10px; width: 70%; padding: 5px; font-weight: bold;}
+        #rListDiv {background-color: rgba(var(--c5D),0.7); width: 40%; align-items: center; }
+            #rListSelect {text-decoration: underline; display: flex; align-items: center; height: 100%; width: 100%; padding-left: 5px;
+            cursor: pointer;
+            }
+                #rListDiv:hover #rListOpsDiv {max-height: 400px; overflow-y: auto; z-index:4;}
+                #rListDiv:after {  position: absolute; top: 0; right: 0; height: 100%; transform: rotate(180deg); cursor: pointer;
+                content: url("assets/images/menu.svg");}
+            #rListOpsDiv {max-height: 0; overflow-y: hidden; position: absolute; width: 100%;
+            border-radius: 0 0 10px 10px;
+
+                box-shadow: 0 1px 3px black;
+            }
+                .rListOp {background-color: white; width: 100%; padding: 2px 5px;}
+                    .rListOp:hover {cursor: pointer; background-color: rgba(var(--c5),0.9);}
+    #recBodyDiv {display: flex; margin-top: 10px; height: 70vh;}
+        #recLeftDiv {background-color: white;
+         width: 40%; display: flex; justify-content: center; align-items: center; flex-direction: column; padding: 10px 0px; border-radius:  0 0 0 10px;}
+            #recImage { background-color: white;
+            width: 95%; height: 600px; background-repeat: no-repeat; background-size: contain; background-position: center;}
+        #recArrowsDiv button {
+        background-color: transparent; border: none;
+        }
+        #recArrowsDiv button:hover {color: rgba(var(--c3)); cursor: pointer; text-decoration: underline;}
+
+            #recRightDiv {background-color: white; width: 60%; padding: 20px 10px;
+            border-radius: 0 0 10px 0px;
+            }
+                #recSummary {margin-left: 15px; width: 90%;}
+                #recWatchDiv {position: absolute; bottom: 0;  padding: 5px;}
+                    .rwOpDiv {background-color: rgba(var(--c5C));
+                text-decoration: none;  display: flex;  align-items: center; border-radius: 12.5px; padding: 5px 10px; margin-bottom: 5px;  min-width: 150px; transition: 0.2s;}
+                    .rwOpDiv:hover {cursor: pointer; background-color: rgba(var(--c5B));}
+                         .rwOpA {text-decoration: none; display: flex; color: black;}
+                            .rwOpA:hover {color: black; text-decoration: underline;}
+                        .rwOpIm {width: 25px; height: 25px; background-repeat: no-repeat; background-size: contain; background-origin: center;}
+                        .rwOpN {font-size: 0.7em; display: flex; justify-content: center; align-items: center}
+
+
+/* MOBILE */
+/*
+@media only screen and (max-width: 1000px) {
+div {font-size: 18px;}
+    #headerText {position: absolute; margin-bottom: -45vh; width: 90vw;}
+    #headerMenu {flex-direction: column;}
+    .menuOpDiv:last-child {margin-right: 5vw;}
+    #header {height: 125vh; }
+    #footerDiv {flex-direction: column; }
+    #footerLinkDiv {width: 100%; margin-top: 20px;}
+    .genreL {width: 39vw; font-size: 4vw; height: 50vh;}
+    .tropeL {width: 39vw; font-size: 4vw;}
+    #contactForm {width: 70vw;}
+    #termBody { width: 100%; overflow-x: auto;}
+    #termHeader {width: 100%;}
+    .term {margin: 2px; padding: 2.5px 10px; overflow-x: auto; width: fit-content;}
+        .termName {width: 25vw;}
+        .termDef { width: 75vw;}
+    .carouselDiv {width: 95%; height: 50vh;}
+    .carouselArr {font-size: 8vw;}
+   }
+@media only screen and (max-width: 700px) {
+    .genreL {width: 80vw; font-size: 8vw; height: 50vh;}
+    .tropeL {width: 80vw; font-size: 8vw;}
+    #contactForm {width: 90vw;}
+}
+
+ */
+
+@media only screen and (max-width: 1000px){
+#introPageBody {font-size: 0.9em;}
+#indexTOC > div > div {font-size: 0.8em;}
+#indexTOC a {
+border: 1px solid black; padding: 2px 10px; border-radius: 5px; text-decoration: none; }
+    #indexTOC a:hover {background-color: black; color: white;}
+
+.page {padding-left: 5vw; padding-right: 5vw;}
+
+.term {flex: 1 0 90%; margin-bottom: 3vh; }
+    .termTitle {height: fit-content; padding: 1vh;}
+
+.tropeDiv {height: max-content; margin-bottom: 3vh;}
+ .tropeDesc {height: max-content; max-height: 45vh;}
+
+#header {flex-direction: column; height: 100vh; width: 100%;}
+#headerAMenu {display: none;}
+
+#introPage {display: block; padding-top: 5vh;}
+    #introPageBody {width: 100%;;}
+    #introPageSide {width: 100%; padding: 0;}
+    #indexTOC {height: 70vh; border-bottom: 2px solid white;}
+
+#recDiv {height: 80vh; padding: 0; border: 2px solid black; background-color: transparent; display: flex; flex-direction: column;}
+    #recTitleDiv {flex-direction: column-reverse; height: 15%; background-color: white; padding:0;}
+    #recTitleDiv > div {width: 100%; height: 100%;}
+        #rListDiv {padding: 5px 10px;}
+        #rListDiv:after {height: null;}
+            #rListSelect {padding: 0;}
+            #rListOpsDiv {left: 0; border-radius: 0 0 10px 10px; box-shadow: 1px 2px black;}
+        #animeTitle {font-size: 1.1em; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
+#recBodyDiv {flex-direction: column; height: 85%; margin-top: 0;}
+#recBodyDiv > div {width: 100%;}
+    #recLeftDiv {height: 45vh; position: relative; border-radius: 0;}
+        #recImage {height: 95%;}
+        .rlsText {display: none;}
+        #recArrowsDiv {width: 100%; height: 100%; position: absolute;}
+        #recArrowsDiv button { position: absolute; bottom: 20vh; font-size: 2em; margin: 0 20px;
+        color: rgba(var(--c5));
+        }
+            #recArrowsDiv button:hover {color: rgba(var(--c5B));}
+        #recArrowsDiv button:last-child {right: 0px;}
+    #recRightDiv {height: calc(100% - 45vh); overflow-y: auto; border-radius: 0 0 10px 10px;
+    border-top: 3px solid rgba(var(--c3A)); border-bottom: 3px solid rgba(var(--c3A));
+    }
+        #recSummary {font-size: 0.78em; }
+    #recWatchDiv {position: relative; margin-top: 15px; flex-wrap: wrap; width: 100%;}
+        .rwOpDiv {width: max-content;}
+
+#contactPage {flex-direction: column;}
+    #contactPage div {width: 100%;}
+    #contactForm div:first-child {display: flex; flex-direction: column;}
+    #contactForm div:first-child input:first-child {width: 91%;}
+    #contactForm div:first-child input:last-child {width: 91%;}
+
+.carouselIm { object-fit: cover; }
+
+.menuOpDivBody { z-index: 5;
+position: absolute; right: 0; top: 100%;
+width: 225px; border-radius: 10px 0 0 10px;
+flex-direction: column; max-height: 0;
+overflow: hidden;
+background-color: rgba(245,245,245,0.9);
+box-shadow: 1px 1px 5px black;
+}
+.menuOpDivBody:hover {max-height: 1000px; overflow: auto;
+    padding-top: 20px;padding-bottom: 20px;}
+
+    .menuOp {text-align: right;}
+    .menuOpDiv {justify-content: right; padding-right: 10px; font-weight: bold;}
+        .menuOpDiv > a {width: 100%;}
+    .menuODIco {display: flex;
+    background-color: none;
+    position: absolute; right: 0; padding: 10px; font-size: 1.4em; margin: 5px; margin-right: 10px;
+    }
+        .menuODIco:hover {background-color: rgba(245,245,245,0.9);}
+
+    .menuODIco:hover + .menuOpDivBody {
+        max-height: 1000px; overflow: auto;
+        padding-top: 20px;padding-bottom: 20px;
+    }
+    .hDropdown {
+    flex-direction: column;
+    }
+        .hDropdown:after {display:none;}
+    .hDropdownList {
+    display: block; z-index: 3; max-height: 1000px; position: relative; justify-content: right; text-align: right; padding-left: 20px; background-color: rgba(245,245,245,0.9);
+    }
+        .hDropdownList div {justify-content: right; margin-bottom: 2px; text-align: right; background-color: transparent; font-weight: normal;
+        }
+            .hDropdownList div:last-child {border-bottom: 2px solid black;}
+
+#lContentFooter {flex-direction: column;}
+#lContentFooter div {width: 100% !important;}
+#lContentFooter > div {padding:0 !important; padding-bottom: 2vh;}
+}
