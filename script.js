@@ -532,20 +532,18 @@ var gCards = [
     {title: "Recommendations", link: "recs.html", linkText: "Go To", class: "introPageCard",    text: "Various lists of anime for all your different needs."}
 ]
 
-function im(img){
+function im(img){ // Usage: shortcut imaging when turning "background-image" from an image (located in images)
     var str = "url(\"assets/images/" + img + "\")"
     return str
 }
-function coverDiv(parent){
+function coverDiv(parent){ // Usage: "Appending" a black screen that w/ !important function "removeAround" and returns it to append content to
     var div = document.createElement("div"); div.className = "coverDiv"; parent.appendChild(div)
     document.body.style.overflow = "hidden";
-    div.onclick = function(event){
-    removeAround(event)
-    }
-
+    div.onclick = function(event){ removeAround(event)  }
     return div
 }
-function removeAround(event){
+
+function removeAround(event){ // Usage: Removes "coverDiv" when clicking outside of the content inside it
     var r = event.composedPath()[0]; var cover = r
     while (cover.className !== "coverDiv") {cover = cover.parentNode}
     r = cover.childNodes[0]
@@ -560,7 +558,7 @@ function removeAround(event){
         document.body.style.overflow = "auto";
     }}
 
-function createGenre(x,p){
+function createGenre(x,p){ // Usage: Creating genre.html "bootstrap" Card based on array[x] "object" information
 if (typeof x == "number") {var g = genre_list[x]}
 else {var g = x}
 
@@ -586,7 +584,7 @@ function cd(txt) {
 p.appendChild(div)
 }
 
-function createTrope(x,p){
+function createTrope(x,p){ // Usage: Creating trope.html "bootstrap" Card based on array[x] "object" information
 if (typeof x == "number") {var t = trope_list[x]}
 else {var t = x}
 var div = document.createElement("div"); div.className = "tropeDiv card";
@@ -608,7 +606,7 @@ var div = document.createElement("div"); div.className = "tropeDiv card";
 p.appendChild(div)
 }
 
-function createTerms(x,p){
+function createTerms(x,p){ // Usage: Creating term.html "boostrap" Cards based on array "object" information (looping, because this code went through a lot of hard times)
 for (var i=0; i<x.length; i++){
 let t = x[i]
 let div = document.createElement("div"); div.className = "term card"; div.id = "t"+t.name.replaceAll(" ","");
@@ -630,7 +628,7 @@ let div = document.createElement("div"); div.className = "term card"; div.id = "
 }
 }
 
-function createTip(x,p){
+function createTip(x,p){ // Usage: Creating term.html "divs" based on array "object index" information
 var t = tip_list[x];
 
 var div = document.createElement("div"); div.className = "tipDiv"; p.appendChild(div);
@@ -641,7 +639,7 @@ var txt = document.createElement("div"); txt.className = "tipText"; txt.innerHTM
     }
 }
 
-function createBar(p){
+function createBar(p){ // Usage: Creating Navbar (no boostrap because it wasn't what I wanted?)
     var ti = document.createElement("a"); ti.className = "menuOp"; ti.href = "index.html";
     var img = document.createElement("img"); img.src = "assets/images/logolast2a.png"; ti.appendChild(img); img.id = "logoIm"; img.alt = "Website Logo";
     p.appendChild(ti);
@@ -680,7 +678,7 @@ for (var i=0; i<lis.length; i++){
 }
 }
 
-function createFooter(parent){
+function createFooter(parent){ // Usage: Creating "boostrap" footer
 var div = document.createElement("div"); div.id = "footerDiv"; parent.appendChild(div);
     var ul = document.createElement("ul"); ul.className = "nav border-bottom"; ul.style = "display: flex; justify-content: center;"; div.appendChild(ul);
         var list = [
@@ -702,7 +700,7 @@ var div = document.createElement("div"); div.id = "footerDiv"; parent.appendChil
     var p = document.createElement("p"); p.className = "text-muted"; p.style = "text-align: center; padding-top: 2vh;"; p.innerHTML = "&copy WebsiteName"; div.appendChild(p);
 
 }
-function popUp(parent,text,header,style){
+function popUp(parent,text,header,style){ // Usage: Create a popup by removing website scrolling & puts in text inside popUp div
     var elem = document.createElement("div"); elem.className = "popUpDiv";
     if (style !== undefined) {elem["style"] = style}
         if (header !== undefined) {
@@ -712,7 +710,8 @@ function popUp(parent,text,header,style){
 coverDiv(parent).appendChild(elem)
 }
 
-function createCarousel(array,type,parent){
+// Old Carousel (not bootstrap) Lines 714-776
+function createCarousel(array,type,parent){ // Depricated Usage: Creating a carousel
     /* function specifically for "pages" and "recommendations" */
 var a = array; var p = parent;
 
@@ -777,7 +776,7 @@ for (var i=0; i<array.length; i++){  if (type == "page") {dot(array[i]["name"])}
 }
 
 
-function learnFooter(parent){
+function learnFooter(parent){ // Usage: Creating the "footer" of the learn sub-pages
 var p = document.getElementById(parent);
 var jm = document.createElement("div"); jm.id = "lContentFooter"; jm.className = "page"; p.appendChild(jm);
     var jd = document.createElement("div"); jm.appendChild(jd)
@@ -801,7 +800,7 @@ var jm = document.createElement("div"); jm.id = "lContentFooter"; jm.className =
 }
 
 /* RECS */
-function createRecElement(parent){
+function createRecElement(parent){ // Usage: Creating the recs.html "Recommendation Div"
 var div = document.createElement("div"); div.id = "recDiv"; parent.appendChild(div);
     var h = document.createElement("div"); h.id = "recTitleDiv"; div.appendChild(h);
         var hT = document.createElement("div"); hT.id = "animeTitle"; h.appendChild(hT);
@@ -825,10 +824,10 @@ var div = document.createElement("div"); div.id = "recDiv"; parent.appendChild(d
             var summ = document.createElement("div"); summ.id = "recSummary"; rrd.appendChild(summ);
             var wopDiv = document.createElement("ul"); wopDiv.id = "recWatchDiv"; rrd.appendChild(wopDiv)
 
-createRecListMenu(hListD,rec_list[0]);
-changeRec(rec_list[0],0)
+createRecListMenu(hListD,rec_list[0]); // Line 869-882
+changeRec(rec_list[0],0); // Line 830-853
 }
-function changeRec(array,next){
+function changeRec(array,next){ // Usage: Flip to specific recommendation based on [array "list"],["rec location" in "list"]
 // example:    ( rec_list[i], 0)
 // things to change:
     var recTitle = document.getElementById("rListDiv")
@@ -853,7 +852,7 @@ function changeRec(array,next){
         changeWatchList(ar[0])
 }
 
-function changeWatchList(obj){
+function changeWatchList(obj){ // Usage: Add the "watch options" for "changeRec"
     var ops = obj["watching"];
     var div = document.getElementById("recWatchDiv"); var dl = div.childNodes.length;
     for (var i=0; i<dl; i++) {div.childNodes[0].remove();}
@@ -867,7 +866,7 @@ function changeWatchList(obj){
     }
 }
 
-function createRecListMenu(div,obj){
+function createRecListMenu(div,obj){ // Usage: Change the Recommendation List Menu options (have current list in one area, others in menu (+ onclick) )
 var slct = div.childNodes[0]; var rest = div.childNodes[1];
 var rl = rest.childNodes.length;
 
@@ -878,12 +877,11 @@ for (var i=0; i<rec_list.length; i++){
     if (li !== obj){
         var div = document.createElement("div"); div.className = "rListOp"; div.innerHTML = li.name; rest.appendChild(div);
             div.onclick = function(){createRecListMenu(document.getElementById("rListDiv"),li); changeRec(li,0)};
-    }
-}
+    }}
 }
 
 
-function createBootstrapCarousel(array,type,parent){
+function createBootstrapCarousel(array,type,parent){ // Usage: Creating "Bootstrap" carousel (Because perhaps I would use this for more things than what I intended to do currently)
 var div = document.createElement("div"); div.className = "carousel carouselDiv slide carousel-fade"; div.setAttribute("data-bs-ride","true"); parent.appendChild(div); div.id = "learnCarousel"; div.style.backgroundColor = "inherit"; div.style.zIndex = "0";
 
     var ind = document.createElement("div"); ind.className = "carousel-indicators"; div.appendChild(ind);
@@ -907,7 +905,7 @@ var div = document.createElement("div"); div.className = "carousel carouselDiv s
     var s2 = document.createElement("span"); s2.className = "visually-hidden"; s2.innerHTML = "Next"; ar.appendChild(s2)
 }
 
-function toggleThrough(array,curPos,next){
+function toggleThrough(array,curPos,next){ // Depricated Usage: For createCarousel function (714-776) to switch between array "objects"
     var rec = array["recs"];
 if (typeof next == "string" || next ==  -1) { // toggling +1, -1
     if (next[0] == "+") {var nextNum = 1} else {var nextNum = -1}
@@ -923,7 +921,7 @@ else {return [rec[next],next]}
 }
 
 /* Start up functions */
-var ht = window.location.pathname.split("/").pop().replace(".html","")
+var ht = window.location.pathname.split("/").pop().replace(".html","") // name of current location (index or "", recs, etc)
 function startUp(){
 if (ht.includes("learn")) {
 //    createCarousel(page_list,"page",document.getElementById("pageCarousel"))
@@ -932,40 +930,29 @@ if (ht.includes("learn")) {
 if (["learn","genres","tropes","terms","tips"].includes(ht)) { learnFooter("contentDiv") }
 
     let p = document.getElementById("genreList")
-    if (p !== null){
-    for (var i=0; i<genre_list.length; i++) {createGenre(i,p)}
-    }
+    if (p !== null){ for (var i=0; i<genre_list.length; i++) {createGenre(i,p)}}
 
     let q = document.getElementById("tropeList")
-    if (q !== null){
-    for (var i=0; i<trope_list.length; i++) {createTrope(i,q)}
-    }
+    if (q !== null){ for (var i=0; i<trope_list.length; i++) {createTrope(i,q)}}
 
     if (document.getElementById("termBody") !== null){
     createTerms(term_list,document.getElementById("termBody"))}
 
     let r = document.getElementById("tipList")
-    if (r !== null){
-    for (var i=0; i<tip_list.length; i++) {createTip(i,r)} }
+    if (r !== null){ for (var i=0; i<tip_list.length; i++) {createTip(i,r)} }
 
 
-
-
-    if (ht.includes("recs")) {
-        createRecElement(document.getElementById("recommendationsPage"))
-    }
+    if (ht.includes("recs")) {createRecElement(document.getElementById("recommendationsPage")) }
 
 createBar(document.getElementById("menuDiv")) // always
 createFooter(document.getElementById("mainContent")) // always
 
 
-    if (ht.includes("index") || ht.length == 0){
+    if (ht.includes("index") || ht.length == 0){ // When on index.html: shows "" or "index")
         var h = document.getElementById("menuDiv");
         h.style.backgroundColor = "rgba(0,0,0,0)";  h.style.position = "absolute";
         var dr = document.getElementsByClassName("hDropdownList");
-        for (var i=0; i<dr.length; i++){
-            dr[i].style.backgroundColor = "rgba(0,0,0,0)";
-        }
+        for (var i=0; i<dr.length; i++){ dr[i].style.backgroundColor = "rgba(0,0,0,0)"; } // set background color "transparent"
 
         for (var i=0; i<gCards.length; i++){createCard(gCards[i],document.getElementById("indexTOC"))}
     }
@@ -981,9 +968,9 @@ behavior: "smooth"
 }); }}
 
 
-if (ht == "recs"){
+if (ht == "recs"){ // Usage: Because linking to external sites is bad practice, why not link a show I'm referencing to, to the site? (If url includes "?5-0", go to rec_list[5][0])
 var fc = window.location.href.split("?");
-if (fc.includes(x=> x.includes("-") && x.length == 3)) {
+if (fc[1].length == 3) {
 if (fc.length > 1 && JSON.parse(fc[1][0]) <= rec_list.length){ // to get to a specific recommended anime (because now I want to link things through ahrefs on other pages)
 var fct = fc[1].split("-");
 console.log(fct)
