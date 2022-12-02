@@ -172,7 +172,7 @@ height: 100px; position: relative;
 
     #genreList {
     display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     }
         .genreDiv { background-color: white; margin: 1vw; border-radius: 20px; font-size: 0.9em; padding-bottom: 20px;
         display: flex; flex-direction: column;
@@ -198,8 +198,8 @@ height: 100px; position: relative;
 
 
 
-        #tropeList {display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+        #tropeList { display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             }
         .tropeDiv {background-color: white; margin: 1vw; text-align: center;  display: flex; flex-direction: column;
         border-radius: 20px; padding-bottom: 2vh;
